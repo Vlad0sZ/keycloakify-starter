@@ -2,6 +2,7 @@ import { useState, useEffect, useReducer } from "react";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
+
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
@@ -18,8 +19,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
     const { social, realm, url, usernameHidden, login, auth, registrationDisabled, messagesPerField } = kcContext;
 
     const { msg, msgStr } = i18n;
-
-    const urlBase = kcContext.properties.APP_TERMS_URL;
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
@@ -175,28 +174,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     )}
                                 </div>
                             </div>
-                            <div className="flex items-start space-x-2 py-2">
-                                <div className="checkbox">
-                                    <label className="text-xs text-muted-foreground leading-tight cursor-pointer select-none">
-                                        <input
-                                            id="termsAccepted"
-                                            name="termsAccepted"
-                                            type="checkbox"
-                                            required // Делаем обязательным на уровне браузера
-                                            className="mt-1 py-2 h-4 w-4 rounded border-input accent-primary cursor-pointer"
-                                        />
-                                        {msg("acceptTermsBefore")}{" "}
-                                        <a
-                                            href={`${urlBase}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-primary font-medium underline-offset-4 hover:underline"
-                                        >
-                                            {msgStr("acceptTermsAfter")}
-                                        </a>
-                                    </label>
-                                </div>
-                            </div>
+
                             <div id="kc-form-buttons" className={kcClsx("kcFormGroupClass")}>
                                 <input type="hidden" id="id-hidden-input" name="credentialId" value={auth.selectedCredential} />
                                 <input

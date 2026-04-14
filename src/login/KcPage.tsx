@@ -4,8 +4,8 @@ import type { ClassKey } from "keycloakify/login";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
-import Template from "keycloakify/login/Template";
-//import { twMerge } from "tailwind-merge";
+import Template from "./Template.tsx";
+import { twMerge } from "tailwind-merge";
 
 const UserProfileFormFields = lazy(
     () => import("keycloakify/login/UserProfileFormFields")
@@ -62,5 +62,8 @@ const classes = {
     //    "!bg-[url(./assets/img/background.jpg)] bg-no-repeat bg-center bg-fixed",
     //    "font-geist"
     //),
-    //kcHeaderWrapperClass: twMerge("text-3xl font-bold underline")
+    kcHeaderWrapperClass: "text-2xl  text-center text-card-foreground",
+    kcHeaderClass: "flex items-center justify-center gap-2 mb-2",
+    kcHtmlClass: "",
+    kcBodyClass: twMerge("blueprint-grid")
 } satisfies { [key in ClassKey]?: string };

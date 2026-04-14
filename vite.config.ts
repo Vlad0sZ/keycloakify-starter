@@ -7,7 +7,10 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            accountThemeImplementation: "none"
+            accountThemeImplementation: "none",
+            environmentVariables: [
+                { name: "APP_TERMS_URL", default: "privacy.html" }
+            ]
         })
     ]
 });

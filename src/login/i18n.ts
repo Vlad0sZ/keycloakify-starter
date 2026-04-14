@@ -3,7 +3,19 @@ import { i18nBuilder } from "keycloakify/login";
 import type { ThemeName } from "../kc.gen";
 
 /** @see: https://docs.keycloakify.dev/features/i18n */
-const { useI18n, ofTypeI18n } = i18nBuilder.withThemeName<ThemeName>().build();
+const { useI18n, ofTypeI18n } = i18nBuilder
+    .withThemeName<ThemeName>()
+    .withCustomTranslations({
+        en: {
+            "acceptTermsBefore": "I agree to the",
+            "acceptTermsAfter": "Terms of Service and privacy policy",
+        },
+        ru: {
+            "acceptTermsBefore": "Я согласен с",
+            "acceptTermsAfter": "Условиями использования и политикой конфиденциальности",
+        }
+    })
+    .build();
 
 type I18n = typeof ofTypeI18n;
 
