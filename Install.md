@@ -13,3 +13,14 @@ yarn install
 yarn build-keycloak-theme
 ```
 
+
+
+C Dockerfile
+
+```bash
+docker build -t keycloakify-builder .
+
+docker run -it --rm -v ~/keycloakify-starter:/app keycloakify-builder
+
+# yarn install && yarn build-keycloak-theme
+```

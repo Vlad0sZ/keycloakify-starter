@@ -11,7 +11,7 @@ export default defineConfig({
         tailwindcss(),
         keycloakify({
             accountThemeImplementation: "none",
-            themeName: ["blueprint-theme"]
+            themeName: "blueprint-theme"
         })
     ],
     resolve: {
