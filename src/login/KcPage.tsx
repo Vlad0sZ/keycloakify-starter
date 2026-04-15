@@ -127,6 +127,7 @@ const classes = {
     ),
     kcHeaderClass: twMerge("flex items-center justify-center gap-2 mb-2"),
     kcHeaderWrapperClass: twMerge("leading-none text-2xl font-semibold capitalize"),
+    kcInputGroup: twMerge("relative flex items-center group"),
     kcInputClass: twMerge(
         "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
         "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
@@ -136,6 +137,13 @@ const classes = {
         "flex items-center gap-2 text-sm leading-none font-medium",
         "select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50",
         "peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+    ),
+
+    kcFormPasswordVisibilityButtonClass: twMerge(
+        "absolute right-3 top-1/2 -translate-y-1/2",
+        "flex items-center justify-center",
+        "text-muted-foreground hover:text-foreground",
+        "transition-colors focus:outline-none"
     ),
 
     kcFormClass: twMerge("flex flex-col gap-4"),

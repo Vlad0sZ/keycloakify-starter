@@ -12,6 +12,7 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import { useScript } from "keycloakify/login/pages/LoginPassword.useScript";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPassword(props: PageProps<Extract<KcContext, { pageId: "login-password.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
@@ -175,7 +176,11 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}
             >
-                <i className={kcClsx(isPasswordRevealed ? "kcFormPasswordVisibilityIconHide" : "kcFormPasswordVisibilityIconShow")} aria-hidden />
+                {isPasswordRevealed ? (
+                    <EyeOff className="size-4 text-muted-foreground transition-colors group-hover:text-foreground" aria-hidden="true" />
+                ) : (
+                    <Eye className="size-4 text-muted-foreground transition-colors group-hover:text-foreground" aria-hidden="true" />
+                )}
             </button>
         </div>
     );
