@@ -5,7 +5,6 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import { useScript } from "keycloakify/login/pages/LoginUsername.useScript";
-import { CheckIcon } from "lucide-react";
 import { Checkbox } from "../ui/Checkbox";
 
 export default function LoginUsername(props: PageProps<Extract<KcContext, { pageId: "login-username.ftl" }>, I18n>) {
