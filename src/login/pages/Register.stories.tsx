@@ -17,6 +17,18 @@ export const Default: Story = {
     render: () => <KcPageStory />
 };
 
+export const Russian: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                locale: {
+                    currentLanguageTag: "ru"
+                }
+            }}
+        />
+    )
+};
+
 export const WithEmailAlreadyExists: Story = {
     render: () => (
         <KcPageStory
